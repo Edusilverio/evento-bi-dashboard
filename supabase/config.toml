@@ -1,0 +1,13 @@
+project_id = "demoaupriejswnapdplc"
+
+[functions.bigquery-query]
+verify_jwt = false
+
+[functions.dashboard-data]
+verify_jwt = false
+
+[functions.ai-analyst]
+verify_jwt = false
+
+[functions.admin-users]
+verify_jwt = false

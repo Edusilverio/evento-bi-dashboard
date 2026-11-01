@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 240 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 12%;
+
+    --primary: 180 73% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 16% 93%;
+    --secondary-foreground: 240 10% 30%;
+
+    --muted: 210 14% 95%;
+    --muted-foreground: 215 14% 45%;
+
+    --accent: 180 60% 28%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 180 73% 18%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 14% 35%;
+    --sidebar-primary: 180 73% 18%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 16% 96%;
+    --sidebar-accent-foreground: 240 20% 12%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 180 73% 18%;
+
+    --chart-teal: 180 73% 18%;
+    --chart-teal-light: 180 60% 35%;
+    --chart-orange: 25 95% 53%;
+    --chart-blue: 217 91% 60%;
+    --chart-green: 145 60% 40%;
+    --chart-red: 0 72% 50%;
+    --chart-purple: 280 65% 55%;
+    --chart-yellow: 48 96% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .kpi-card {
+    @apply bg-card border border-border rounded-xl p-5 transition-all duration-300;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+  }
+
+  .kpi-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.1);
+  }
+
+  .dashboard-header {
+    @apply text-lg font-bold tracking-wide uppercase;
+    color: hsl(var(--primary));
+  }
+
+  .page-container {
+    @apply p-6 space-y-6 w-full;
+  }
+
+  .glass-card {
+    @apply bg-card border border-border rounded-xl;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+  }
+
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table th {
+    @apply px-4 py-3 text-left font-semibold text-muted-foreground uppercase text-xs tracking-wider border-b border-border;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border/50;
+  }
+
+  .data-table tr:nth-child(even) td {
+    background: hsl(var(--muted));
+  }
+
+  .data-table tr:hover td {
+    background: hsl(var(--primary) / 0.05);
+  }
+}
